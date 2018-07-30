@@ -10,6 +10,8 @@ before_script:
   - npm prune
 script:
   - npm test
+  on:
+    tags: true
 after_success:
   - ./node_modules/.bin/codecov
 branches:
