@@ -12,6 +12,13 @@ script:
   - npm test
 after_success:
   - ./node_modules/.bin/codecov
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  skip_cleanup: true
+  on:
+    tags: true
 # branches:
 #  except:
 #   - /^v\d+\.\d+\.\d+$/
